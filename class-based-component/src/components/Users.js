@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import classes from './Users.module.css';
 import User from './User';
 
-const DUMMY_USERS = [
-    { id: 'u1', name: 'Max' },
-    { id: 'u2', name: 'Manuel' },
-    { id: 'u3', name: 'Julie' }
-];
-
 class Users extends Component {
     // 클래스 컴포넌트에서 상태 정의 시에는 생성자 사용.
     constructor() {
@@ -26,7 +20,7 @@ class Users extends Component {
     render() {
         const userList = (
             <ul>
-                {DUMMY_USERS.map((user) => (
+                {this.props.users.map((user) => (
                     <User key={user.id} name={user.name} />
                 ))}
             </ul>
